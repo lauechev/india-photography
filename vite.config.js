@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // base: '/',
+  base: '/india-photography/',
   server: {
     port: 3000,
   },
