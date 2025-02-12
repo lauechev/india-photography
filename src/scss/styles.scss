@@ -1,24 +1,97 @@
 @use './base.scss' as *;
 @use './variables' as *;
 
-html {
-  box-sizing: border-box;
-  height: 100%;
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url(/assets/hk-grotesk.woff2), url(/assets/hk-grotesk.woff);
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-html,
 body {
-  margin: 0;
-  padding: 0;
+  font-family: 'HK Grotesk', Arial;
+  font-size: 36px;
+  line-height: 1.25;
+
+  background-color: #ffffff;
+  color: #333333;
 }
 
-::selection {
-  background-color: #30cac073;
-  color: #130808;
+header {
+  position: fixed;
+  top: 36px;
+  left: 36px;
+  z-index: 1;
+}
+section {
+  background-color: var(--color1);
+  min-height: 100vh;
+  padding: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.content {
+  position: relative;
+  width: 38%;
+  height: auto;
+}
+
+div.square {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color2);
+
+  position: absolute;
+  top: 50px;
+  left: -50px;
+}
+
+div.circle {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color3);
+
+  position: absolute;
+  bottom: 50px;
+  right: -50px;
+  border-radius: 50%;
+}
+
+div.content img {
+  position: relative;
+}
+
+section.s2 {
+  background-color: var(--color2);
+}
+
+section.s2 div.square {
+  background-color: var(--color4);
+}
+
+section.s2 div.circle {
+  background-color: var(--color1);
+}
+
+section.s3 {
+  background-color: var(--color3);
+}
+
+section.s3 div.square {
+  background-color: var(--color1);
+}
+
+section.s3 div.circle {
+  background-color: var(--color2);
+}
+
+section.s4 {
+  background-color: var(--color4);
+}
+
+section.s4 div.square {
+  background-color: var(--color3);
+}
+
+section.s4 div.circle {
+  background-color: var(--color2);
 }
