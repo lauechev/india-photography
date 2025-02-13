@@ -9,9 +9,7 @@ body {
   font-family: 'HK Grotesk', Arial;
   font-size: 36px;
   line-height: 1.25;
-
-  background-color: #ffffff;
-  color: #333333;
+  color: var(--colorFont);
 }
 
 header {
@@ -94,4 +92,14 @@ section.s4 div.square {
 
 section.s4 div.circle {
   background-color: var(--color2);
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 8px;
+  background-color: var(--colorFont);
+  z-index: 2;
 }
