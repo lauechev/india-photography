@@ -42,3 +42,29 @@ document.addEventListener('scroll', function () {
     }
   });
 });
+
+//when we scroll the pagemake things parallax
+//move certain tags based on how far they are from the anchor point
+//the anchor point is the middle of the section.
+//we should parallax a ratio of the middle distance scrolled on the middle point of the anchor
+
+document.addEventListener('scroll', function () {
+  const topViewport = window.scrollY;
+  const halfInnerHeight = window.innerHeight / 2;
+  const midViewport = topViewport + halfInnerHeight;
+
+  sectionsTag.forEach((section) => {
+    const topSection = section.offsetTop;
+    const halfOffsetHeight = section.offsetHeight / 2;
+    const midSection = topSection + halfOffsetHeight;
+
+    const distanceToSection = midViewport - midSection;
+
+    const tag = section.querySelector<HTMLDivElement>('div.square');
+
+    if (tag) {
+      const speed = parseFloat(tag.getAttribute('data-parallax') || '0');
+      tag.style.transform = `translateY(${distanceToSection * speed}px)`;
+    }
+  });
+});
