@@ -29,7 +29,7 @@ section {
 }
 div.content {
   position: relative;
-  width: 38%;
+  width: 43%;
   height: auto;
 }
 
@@ -102,4 +102,36 @@ section.s4 div.circle {
   height: 8px;
   background-color: var(--colorFont);
   z-index: 2;
+}
+
+@media screen and (max-width: 1050px) {
+  div.content {
+    position: relative;
+    width: 60%;
+    height: auto;
+  }
+  body {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.content {
+    position: relative;
+    width: 60%;
+    height: auto;
+  }
+  body {
+    font-size: 25px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  div.content {
+    position: relative;
+    width: 80%;
+    height: auto;
+  }
 }
