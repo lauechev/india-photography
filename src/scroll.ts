@@ -60,11 +60,12 @@ document.addEventListener('scroll', function () {
 
     const distanceToSection = midViewport - midSection;
 
-    const tag = section.querySelector<HTMLDivElement>('div.square');
+    const parallaxTags = section.querySelectorAll<HTMLDivElement>(`[data-parallax]`);
 
-    if (tag) {
+    //loop over each parallaxed tag
+    parallaxTags.forEach((tag) => {
       const speed = parseFloat(tag.getAttribute('data-parallax') || '0');
       tag.style.transform = `translateY(${distanceToSection * speed}px)`;
-    }
+    });
   });
 });
